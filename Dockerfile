@@ -36,7 +36,8 @@ RUN composer require unisharp/laravel-filemanager
 
 # Publish Filemanager assets
 RUN php artisan vendor:publish --tag=lfm_config \
-    && php artisan vendor:publish --tag=lfm_public
+    && php artisan vendor:publish --tag=lfm_public \
+    &&  php artisan storage:link
 
 # Patch routes/web.php automatically
 RUN echo "<?php\n\
