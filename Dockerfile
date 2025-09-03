@@ -51,8 +51,8 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], funct
 });" > routes/web.php
 
 # Fix permissions for storage, bootstrap/cache, and public
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public /var/www/html/database/database.sqlite
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public /var/www/html/database/database.sqlite
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public /var/www/html/database
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public /var/www/html/database
 
 # Copy custom Apache config
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
